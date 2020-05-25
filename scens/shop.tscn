@@ -1,0 +1,412 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://style/underdog-regular.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+func _pressed():
+	get_node(\"../../\").hide()
+"
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up1 += 1
+		$col.text = \"Куплено: \" + str(G.up1)
+"
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up2 += 1
+		$col.text = \"Куплено: \" + str(G.up2)
+"
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up3 += 1
+		$col.text = \"Куплено: \" + str(G.up3)
+"
+
+[sub_resource type="GDScript" id=8]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up4 += 1
+		$col.text = \"Куплено: \" + str(G.up4)
+"
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up5 += 1
+		$col.text = \"Куплено: \" + str(G.up5)
+"
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= int($up.text):
+		G.balans -= int($up.text)
+		$up.text = str(int($up.text) + int($up.text) / 100 * 50)
+		G.up6 += 1
+		$col.text = \"Куплено: \" + str(G.up6)
+"
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends Button
+
+
+func _pressed():
+	if G.balans >= 500000000:
+		G.balans -= 500000000
+		$kod.popup()
+"
+
+[node name="shop" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fon" type="ColorRect" parent="."]
+anchor_left = 0.0458984
+anchor_top = 0.0583333
+anchor_right = 0.960938
+anchor_bottom = 0.933333
+color = Color( 0.2, 0.227451, 0.309804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="Control" parent="."]
+anchor_left = 0.0458984
+anchor_top = 0.0583333
+anchor_right = 0.960938
+anchor_bottom = 0.933333
+theme = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clous" type="Button" parent="buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -39.0
+margin_bottom = 39.0
+text = "X"
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up1" type="Button" parent="buttons"]
+anchor_left = 0.0896058
+anchor_top = 0.216539
+anchor_right = 0.212338
+anchor_bottom = 0.361301
+text = "Купить"
+script = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up1"]
+anchor_left = 0.026
+anchor_right = 1.0
+anchor_bottom = 0.289
+margin_left = 0.00999999
+margin_right = 1.0
+margin_bottom = 0.0359974
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up1"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up2" type="Button" parent="buttons"]
+anchor_left = 0.327357
+anchor_top = 0.216539
+anchor_right = 0.450089
+anchor_bottom = 0.361301
+text = "Купить"
+script = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up2"]
+anchor_left = 0.026
+anchor_right = 1.0
+anchor_bottom = 0.289
+margin_left = 0.00999999
+margin_right = 1.0
+margin_bottom = 0.0359974
+text = "1000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up2"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+margin_left = -3.21606
+margin_right = -3.21606
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up3" type="Button" parent="buttons"]
+anchor_left = 0.542703
+anchor_top = 0.216539
+anchor_right = 0.665435
+anchor_bottom = 0.361301
+margin_left = -3.05176e-05
+text = "Купить"
+script = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up3"]
+anchor_left = 0.026
+anchor_right = 1.0
+anchor_bottom = 0.289
+margin_left = 0.00999999
+margin_right = 1.0
+margin_bottom = 0.0359974
+text = "6000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up3"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+margin_left = -3.21606
+margin_top = -6.00731
+margin_right = -3.21609
+margin_bottom = -6.00731
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up4" type="Button" parent="buttons"]
+anchor_left = 0.0896058
+anchor_top = 0.636426
+anchor_right = 0.212338
+anchor_bottom = 0.781188
+text = "Купить"
+script = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up4"]
+anchor_left = 0.026
+anchor_right = 1.0
+anchor_bottom = 0.289
+margin_left = 0.00999999
+margin_right = 1.0
+margin_bottom = 0.0359974
+text = "15000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up4"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+margin_left = -3.21606
+margin_top = -2.62491
+margin_right = -3.21609
+margin_bottom = -2.62491
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up5" type="Button" parent="buttons"]
+anchor_left = 0.330559
+anchor_top = 0.636426
+anchor_right = 0.453291
+anchor_bottom = 0.781188
+text = "Купить"
+script = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up5"]
+anchor_left = 0.026
+anchor_right = 1.0
+anchor_bottom = 0.289
+margin_left = 0.00999999
+margin_right = 1.0
+margin_bottom = 0.0359974
+text = "40000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up5"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+margin_left = -0.216064
+margin_top = -2.62491
+margin_right = -0.216095
+margin_bottom = -2.62491
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up6" type="Button" parent="buttons"]
+anchor_left = 0.542703
+anchor_top = 0.636426
+anchor_right = 0.665435
+anchor_bottom = 0.781188
+margin_left = -3.05176e-05
+text = "Купить"
+script = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/up6"]
+anchor_left = 0.026087
+anchor_right = 1.0087
+anchor_bottom = 0.289474
+margin_right = 7.62939e-06
+text = "100000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="col" type="Label" parent="buttons/up6"]
+anchor_left = 0.0279658
+anchor_top = -0.90363
+anchor_right = 1.01057
+anchor_bottom = 0.0437381
+margin_left = -0.216064
+margin_top = -2.62491
+margin_right = -0.216095
+margin_bottom = -2.62491
+text = "Куплено: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus" type="Button" parent="buttons"]
+anchor_left = 0.742631
+anchor_top = 0.766126
+anchor_right = 0.906985
+anchor_bottom = 0.899459
+text = "БОНУС"
+script = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="up" type="Label" parent="buttons/bonus"]
+anchor_left = 0.0324675
+anchor_right = 1.01299
+anchor_bottom = 0.314286
+text = "500.000.000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kod" type="WindowDialog" parent="buttons/bonus"]
+margin_left = -454.539
+margin_top = -207.686
+margin_right = -3.53918
+margin_bottom = -66.6856
+window_title = "этот код отправить мне в вк"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="kod" type="LineEdit" parent="buttons/bonus/kod"]
+margin_left = -2.44351
+margin_top = 1.81451
+margin_right = 447.556
+margin_bottom = 140.815
+text = "/100KOD$"
